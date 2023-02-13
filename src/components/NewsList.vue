@@ -1,12 +1,5 @@
 <template>
     <div>
-        <div class = "newsGrid news__list">
-            <div class="news__item card" v-for="article in articles"> 
-                <img class="card-img-top" :src= article.urlToImage alt="Card image cap">
-                <h2 class="card-title"> {{ article.title }} </h2>
-                <p class="card-text">{{ article.description }}</p>
-            </div>
-        </div>
         <form @submit.prevent="searchNews" class="d-flex flex-column justify-content-center">
             <div class="input-group mx-sm-3 mb-2">
                 <label class="visually-hidden" for="search">Search</label>
@@ -17,6 +10,13 @@
             </div>
             <p>You are searching for {{ searchTerm }}</p>
         </form>
+        <div class = "newsGrid news__list">
+            <div class="news__item card" v-for="article in articles"> 
+                <img class="card-img-top" :src= article.urlToImage alt="Card image cap">
+                <h2 class="card-title"> {{ article.title }} </h2>
+                <p class="card-text">{{ article.description }}</p>
+            </div>
+        </div>
     </div>
 </template>
 
